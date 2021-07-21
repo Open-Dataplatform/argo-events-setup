@@ -12,10 +12,17 @@ rules:
 - apiGroups:
   - ""
   resources:
-  - pod
+  - pods
   verbs:
   - get
-  - list
+  - watch
+  - patch
+- apiGroups:
+  - ""
+  resources:
+  - pods/log
+  verbs:
+  - get
   - watch
 - apiGroups:
   - argoproj.io
