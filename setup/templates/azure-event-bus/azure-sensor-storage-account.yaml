@@ -7,7 +7,7 @@ spec:
     serviceAccountName: operate-workflow-sa
   dependencies:
     - name: test-dep
-      eventSourceName: webhook
+      eventSourceName: azure-storage-test
       eventName: example
   triggers:
     - template:
