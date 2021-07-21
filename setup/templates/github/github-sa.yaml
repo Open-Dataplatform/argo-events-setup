@@ -10,6 +10,14 @@ metadata:
   name: operate-workflow-role
 rules:
 - apiGroups:
+  - ""
+  resource:
+  - pod
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
   - argoproj.io
   resources:
   - eventsources
