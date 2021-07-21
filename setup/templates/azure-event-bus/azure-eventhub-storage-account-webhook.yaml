@@ -10,12 +10,17 @@ spec:
   webhook:
     # event-source can run multiple HTTP servers. Simply define a unique port to start a new HTTP server
     example:
-      # port to run HTTP server on
-      port: "12000"
-      # endpoint to listen to
-      endpoint: /example
-      # HTTP request method to allow. In this case, only POST requests are accepted
-      method: POST
+      # endpoint to listen to events on
+        endpoint: /argo-events/azure/push
+        # port to run internal HTTP server on
+        port: "12000"
+        # HTTP request method to allow. In this case, only POST requests are accepted
+        method: POST
+        # url the event-source will use to register at Github.
+        # This url must be reachable from outside the cluster.
+        # The name for the service is in `<event-source-name>-eventsource-svc` format.
+        # You will need to create an Ingress or Openshift Route for the event-source service so that it can be reached from GitHub.
+        url: https://{{ .Values.ingress.url }}
 
 #    example-foo:
 #      port: "12000"
