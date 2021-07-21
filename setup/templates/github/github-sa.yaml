@@ -1,0 +1,31 @@
+# operate-workflow-sa
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: operate-workflow-sa
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: operate-workflow-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - workflows
+  verbs:
+  - create
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: operate-workflow-rb
+  namespace: {{ .Release.Namespace }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: {{ .Values.initvault.sa.name }}-role
+subjects:
+- kind: ServiceAccount
+  name: {{ .Values.initvault.sa.name }}-sa
+  namespace: {{ .Release.Namespace }}
