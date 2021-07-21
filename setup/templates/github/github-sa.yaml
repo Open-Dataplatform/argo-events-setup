@@ -24,8 +24,8 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: {{ .Values.initvault.sa.name }}-role
+  name: operate-workflow-role
 subjects:
 - kind: ServiceAccount
-  name: {{ .Values.initvault.sa.name }}-sa
+  name: operate-workflow-sa
   namespace: {{ .Release.Namespace }}
