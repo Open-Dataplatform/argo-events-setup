@@ -2,14 +2,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: EventSource
 metadata:
-  name: github
+  name: github-pr
 spec:
   service:
     ports:
       - port: 12000
         targetPort: 12000
   github:
-    docker:
+    pull-request:
       repositories:
         - owner: Open-Dataplatform
           names:

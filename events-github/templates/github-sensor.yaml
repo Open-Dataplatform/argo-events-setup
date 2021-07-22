@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Sensor
 metadata:
-  name: github
+  name: docker-build
 spec:
   template:
     serviceAccountName: operate-workflow-sa
   dependencies:
-    - name: test-dep
+    - name: pr-dockerbuild
       eventSourceName: github
-      eventName: docker
+      eventName: pull-request
       filters:
         data:
           # Name of the event that triggered the delivery: [pull_request, push, yadayadayada]
