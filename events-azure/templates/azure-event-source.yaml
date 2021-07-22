@@ -4,7 +4,7 @@ metadata:
   name: azure-events-hub
 spec:
   azureEventsHub:
-    example:
+    storage-account:
       # FQDN of the EventsHub namespace you created
       # More info at https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-get-connection-string
       fqdn: argo-test.servicebus.windows.net
