@@ -7,7 +7,7 @@ spec:
     serviceAccountName: operate-workflow-sa
   dependencies:
     - name: pr-dockerbuild
-      eventSourceName: github
+      eventSourceName: github-pr
       eventName: pull-request
       filters:
         data:
