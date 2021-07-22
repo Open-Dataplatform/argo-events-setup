@@ -42,7 +42,7 @@ spec:
                       - |
                         apt install jq;
                         msg="{{`{{inputs.parameters.message}}`}}";
-                        echo $msg;
+                        echo $msg | jq .;
                       
           parameters:
             - src:
