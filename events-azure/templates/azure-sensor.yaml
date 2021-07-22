@@ -38,7 +38,12 @@ spec:
                     container:
                       image: docker/whalesay:latest
                       command: ["/bin/sh", "-c"]
-                      args: ["echo {{`{{inputs.parameters.message}}`}}"]
+                      args: 
+                      - |
+                        apk add jq;
+                        msg={{`{{inputs.parameters.message}}`}};
+                        echo $msg | jq -r .data | base64 -di | jq -r .body | base64 -di | jq .
+                      
           parameters:
             - src:
                 dependencyName: test-dep
