@@ -40,7 +40,7 @@ spec:
                       command: ["/bin/sh", "-c"]
                       args: 
                       - |
-                        apk add jq;
+                        apt install jq;
                         msg={{`{{inputs.parameters.message}}`}};
                         echo $msg | jq -r .data | base64 -di | jq -r .body | base64 -di | jq .
                       
