@@ -37,8 +37,8 @@ spec:
                         - name: message
                     container:
                       image: docker/whalesay:latest
-                      command: [cowsay]
-                      args: ["{{`{{inputs.parameters.message}}`}}"]
+                      command: ["/bin/sh", "-c"]
+                      args: ["echo {{`{{inputs.parameters.message}}`}}"]
           parameters:
             - src:
                 dependencyName: test-dep
