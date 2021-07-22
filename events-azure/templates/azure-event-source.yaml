@@ -3,16 +3,16 @@ kind: EventSource
 metadata:
   name: azure-webhook
 spec:
-  service:
-    ports:
-      - port: 12000
-        targetPort: 12000
-  webhook:
-    # event-source can run multiple HTTP servers. Simply define a unique port to start a new HTTP server
-    azure:
-      # port to run HTTP server on
-      port: "12000"
-      # endpoint to listen to
-      endpoint: /push
-      # HTTP request method to allow. In this case, only POST requests are accepted
-      method: POST
+  azureEventsHub:
+    example:
+      # FQDN of the EventsHub namespace you created
+      # More info at https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-get-connection-string
+      fqdn: argo-test.servicebus.windows.net
+      sharedAccessKeyName:
+        name: event-hub
+        key: keyname
+      sharedAccessKey:
+        name: event-hub
+        key: key
+      # Event Hub path/name
+      hubName: argo-test
