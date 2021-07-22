@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: EventSource
 metadata:
-  name: azure-webhook
+  name: azure-events-hub
 spec:
   azureEventsHub:
     example:
