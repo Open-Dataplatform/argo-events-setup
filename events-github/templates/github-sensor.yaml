@@ -48,6 +48,7 @@ spec:
                 name: github-
               spec:
                 entrypoint: whalesay
+                serviceAccountName: operate-workflow-sa
                 arguments:
                   parameters:
                     - name: pr-title
