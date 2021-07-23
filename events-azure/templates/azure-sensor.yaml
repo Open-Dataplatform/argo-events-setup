@@ -40,6 +40,8 @@ spec:
                       command: ["/bin/sh", "-c"]
                       args: 
                       - |
+                        apt install jq
+                        jq --version
                         echo "{{`{{inputs.parameters.message}}`}}";
                       
           parameters:
