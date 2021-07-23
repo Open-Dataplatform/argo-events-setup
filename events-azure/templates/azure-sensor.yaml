@@ -46,5 +46,5 @@ spec:
           parameters:
             - src:
                 dependencyName: test-dep
-                dataTemplate: "{{` {{ .data }} `}}"
+                dataTemplate: "{{` {{ . }} `}}"
               dest: spec.arguments.parameters.0.value
