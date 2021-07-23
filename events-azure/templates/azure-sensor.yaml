@@ -45,5 +45,5 @@ spec:
           parameters:
             - src:
                 dependencyName: test-dep
-                dataTemplate: "{{` {{ .Input.body | b64dec | toPrettyJson | .0.id}} `}}"
+                dataTemplate: "{{` {{ .Input.body | b64dec | toPrettyJson }} `}}"
               dest: spec.arguments.parameters.0.value
