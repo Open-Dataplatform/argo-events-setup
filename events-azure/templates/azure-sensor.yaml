@@ -42,7 +42,7 @@ spec:
                       - |
                         apt install jq
                         jq --version
-                        echo "{{`{{inputs.parameters.message}}`}}";
+                        echo "{{`{{inputs.parameters.message}}`}}" | jq .[];
                       
           parameters:
             - src:
